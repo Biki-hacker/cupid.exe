@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@source "./../index.html";
+@source "./**/*.{js,jsx,ts,tsx}";
+
+/* Base dark theme */
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #09090b; /* zinc-950 */
+  color: #f4f4f5; /* zinc-100 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utilities */
+.neon-text {
+  text-shadow: 0 0 10px rgba(255, 77, 166, 0.7), 0 0 20px rgba(155, 93, 229, 0.5);
+}
+
+.shine-bg {
+  background: linear-gradient(110deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.08) 40%);
+  background-size: 200% 100%;
+}
+
+/* Neon shadow helper */
+.shadow-neon {
+  box-shadow: 0 0 10px rgba(255, 77, 166, 0.7), 0 0 20px rgba(155, 93, 229, 0.5);
+}
+
+/* Animations (replacing Tailwind config-based ones) */
+@keyframes blink {
+  0%, 100% { opacity: 1 }
+  50% { opacity: 0 }
+}
+.animate-blink { animation: blink 1s steps(2, start) infinite }
+
+@keyframes shine {
+  0% { background-position: -200% 0 }
+  100% { background-position: 200% 0 }
+}
+.animate-shine { animation: shine 2.5s linear infinite }
+
+/* Font utilities */
+.font-terminal {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.font-handwritten {
+  font-family: "Caveat", ui-rounded, "Comic Neue", "Segoe Print", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* Playful handwritten (Playpen Sans) */
+.font-playpen {
+  font-family: "Playpen Sans", ui-rounded, "Comic Neue", "Segoe Print", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-optical-sizing: auto;
+}
